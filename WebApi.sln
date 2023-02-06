@@ -5,10 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{FAF2E050-477C-4546-96E2-38F4ABF0A10E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{33D7F2E3-991F-4AB4-8669-592AA89C956A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FAF2E050-477C-4546-96E2-38F4ABF0A10E} = {FAF2E050-477C-4546-96E2-38F4ABF0A10E}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserApp", "UserApp\UserApp.csproj", "{33D7F2E3-991F-4AB4-8669-592AA89C956A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

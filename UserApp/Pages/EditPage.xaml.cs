@@ -1,13 +1,14 @@
-﻿using App.Helpers;
-using App.Models;
+﻿using UserApp.Helpers;
+using UserApp.Models;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Windows;
+using UserApp.Helpers.Extensions;
 using System.Windows.Controls;
 
-namespace App
+namespace UserApp
 {
     /// <summary>
     /// Логика взаимодействия для Page1.xaml
@@ -33,14 +34,22 @@ namespace App
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            Product product = DataContext as Product;
+
+            if(product.Name.IsNullOrEmpty() || product.Description.IsNullOrEmpty())
+            {
+                MessageBox.Show("Fields cannot be empty!", "", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (_newObject)
             {
-                RequestHelper.Create(DataContext as Product);
+                RequestHelper.Create(product);
 
             }
             else
             {
-                RequestHelper.Update(DataContext as Product);
+                RequestHelper.Update(product);
 
             }
 

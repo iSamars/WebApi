@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.Helpers
+namespace UserApp.Helpers
 {
     public static class Config
     {

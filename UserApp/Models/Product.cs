@@ -1,4 +1,4 @@
-﻿namespace App.Models
+﻿namespace UserApp.Models
 {
     public class Product
     {

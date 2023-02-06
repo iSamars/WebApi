@@ -1,4 +1,4 @@
-﻿using App.Models;
+﻿using UserApp.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 
-namespace App.Helpers
+namespace UserApp.Helpers
 {
     public static class RequestHelper
     {

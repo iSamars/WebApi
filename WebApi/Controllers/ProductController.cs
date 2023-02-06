@@ -46,21 +46,27 @@ namespace WebApi.Controllers
         public async Task<IActionResult> Put(int? id, Product product)
         {
             Product? existingProduct = await _db.Products.FirstOrDefaultAsync(n => n.Id == product.Id);
-            existingProduct.Name = product.Name;
-            existingProduct.Description = product.Description;
-            var success = (await _db.SaveChangesAsync()) > 0;
 
-            return new JsonResult(success);
+            if(existingProduct != null)
+            {
+                existingProduct.Name = product.Name;
+                existingProduct.Description = product.Description;
+            }
+
+            return new JsonResult((await _db.SaveChangesAsync()) > 0);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             Product? product = await _db.Products.FirstOrDefaultAsync(n => n.Id == id);
-            _db.Remove(product);
-            bool success = (await _db.SaveChangesAsync()) > 0;
 
-            return new JsonResult(success);
+            if(product != null)
+            {
+                _db.Remove(product);
+            }
+            
+            return new JsonResult((await _db.SaveChangesAsync()) > 0);
         }
     }
 }

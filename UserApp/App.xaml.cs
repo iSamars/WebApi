@@ -6,12 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace App
+namespace UserApp
 {
     /// <summary>
-    /// Логика взаимодействия для App.xaml
+    /// Логика взаимодействия для UserApp.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class Appl : Application
     {
     }
 }

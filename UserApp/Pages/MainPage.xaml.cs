@@ -1,5 +1,5 @@
-﻿using App.Helpers;
-using App.Models;
+﻿using UserApp.Helpers;
+using UserApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace App
+namespace UserApp
 {
     /// <summary>
     /// Логика взаимодействия для MainPage.xaml
@@ -49,6 +49,8 @@ namespace App
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             List<Product> products = DGridProducts.SelectedItems.Cast<Product>().ToList();
+
+            if(products.Count == 0) return;
 
             if(MessageBox.Show("Are you sure?", "Attention!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
